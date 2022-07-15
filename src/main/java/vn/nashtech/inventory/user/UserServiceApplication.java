@@ -1,4 +1,4 @@
-package vn.nashtech.tt.user;
+package vn.nashtech.inventory.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

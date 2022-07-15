@@ -1,4 +1,4 @@
-package vn.nashtech.tt.user.database.model;
+package vn.nashtech.inventory.user.database.model;
 
 import lombok.Getter;
 import lombok.Setter;

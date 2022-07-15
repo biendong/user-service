@@ -1,9 +1,9 @@
-package vn.nashtech.tt.user.api.dto;
+package vn.nashtech.inventory.user.api.dto;
 
 import lombok.Data;
 
 @Data
-public class SignInRQ {
+public class SignInRequest {
     private String username;
     private String password;
 }

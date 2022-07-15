@@ -1,4 +1,4 @@
-package vn.nashtech.tt.user;
+package vn.nashtech.inventory.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

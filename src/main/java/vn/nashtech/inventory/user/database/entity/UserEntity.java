@@ -1,8 +1,8 @@
-package vn.nashtech.tt.user.database.entity;
+package vn.nashtech.inventory.user.database.entity;
 
 import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
-import vn.nashtech.tt.user.database.model.User;
+import vn.nashtech.inventory.user.database.model.User;
 
 import javax.persistence.*;
 
