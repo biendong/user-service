@@ -15,4 +15,10 @@ public class UserEntity extends User {
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {return super.getId();}
+
+    @Column(name = "username")
+    public String getUsername() {return super.getUsername();}
+
+    @Column(name = "password")
+    public String getPassword() {return super.getPassword();}
 }
