@@ -24,11 +24,11 @@ public class UserServiceImpl implements UserService {
     public User signIn(SignInRequest req) {
         UserEntity user = userRepository.findByUsername(req.getUsername());
         if (user == null) {
-            return null;
+            throw new RuntimeException("Username does not exist");
         } else {
             Boolean check = BCrypt.checkpw(req.getPassword(), user.getPassword());
             if (!check) {
-                return null;
+                throw new RuntimeException("Incorrect password");
             } else {
                 return user;
             }
@@ -37,9 +37,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void signUp(SignUpRequest req) {
-        UserEntity user = new UserEntity();
-        user.setUsername(req.getUsername());
-        user.setPassword(BCrypt.hashpw(req.getPassword(), BCrypt.gensalt(10)));
-        userRepository.save(user);
+        UserEntity checkUser = userRepository.findByUsername(req.getUsername());
+        if (checkUser != null) {
+            throw new RuntimeException("Username exist");
+        } else {
+            UserEntity user = new UserEntity();
+            user.setUsername(req.getUsername());
+            user.setPassword(BCrypt.hashpw(req.getPassword(), BCrypt.gensalt(10)));
+            user.setFirstName(req.getFirstName());
+            user.setLastName(req.getLastName());
+            user.setFullName(req.getFullName());
+            userRepository.save(user);
+        }
     }
 }
