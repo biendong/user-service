@@ -1,15 +1,14 @@
-package vn.nashtech.inventory.user.database.model;
+package vn.nashtech.inventory.user.api.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class User {
-    private Long id;
+public class SignUpRequest {
     private String username;
     private String password;
     private String fullName;
-    private String lastName;
     private String firstName;
+    private String lastName;
 }
