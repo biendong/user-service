@@ -1,11 +1,13 @@
 package vn.nashtech.inventory.user.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
+import java.util.List;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vn.nashtech.inventory.user.api.dto.SignInRequest;
 import vn.nashtech.inventory.user.api.dto.SignUpRequest;
+import vn.nashtech.inventory.user.api.dto.UserRequest;
 import vn.nashtech.inventory.user.database.entity.UserEntity;
 import vn.nashtech.inventory.user.database.model.User;
 import vn.nashtech.inventory.user.database.repository.UserRepository;
@@ -49,5 +51,27 @@ public class UserServiceImpl implements UserService {
             user.setFullName(req.getFullName());
             userRepository.save(user);
         }
+    }
+    @Override
+    public UserEntity updateProfile(UserRequest req, Long id) {
+      UserEntity user = userRepository.findById(id).orElse(null);
+      if(user != null){
+        user.setId(id);
+        user.setUsername(req.getUsername());
+        user.setPassword(req.getPassword());
+        user.setFullName(req.getFullName());
+        user.setFirstName(req.getFirstName());
+        user.setLastName(req.getLastName());
+        return userRepository.save(user);
+      }
+      return null;
+    }
+    @Override
+    public List<UserEntity> getListUser() {
+      List<UserEntity> listUser = (List<UserEntity>) userRepository.findAll();
+      if(!listUser.isEmpty()) {
+        return listUser;
+      }
+      return null;
     }
 }
