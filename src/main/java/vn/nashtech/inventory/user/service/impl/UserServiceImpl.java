@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
             user.setPassword(BCrypt.hashpw(req.getPassword(), BCrypt.gensalt(10)));
             user.setFirstName(req.getFirstName());
             user.setLastName(req.getLastName());
-            user.setFullName(req.getFullName());
+            user.setEmail(req.getEmail());
             userRepository.save(user);
         }
     }

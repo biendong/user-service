@@ -3,6 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id 'eclipse'
+    id "org.flywaydb.flyway" version "9.1.2"
 }
 
 group = 'vn.nashtech.inventory'

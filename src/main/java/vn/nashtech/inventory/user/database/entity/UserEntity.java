@@ -22,8 +22,8 @@ public class UserEntity extends User {
     @Column(name = "password")
     public String getPassword() {return super.getPassword();}
 
-    @Column(name = "fullName")
-    public String getFullName() {return super.getFullName();}
+    @Column(name = "email")
+    public String getEmail() {return super.getEmail();}
 
     @Column(name = "lastName")
     public String getLastName() {return super.getLastName();}
