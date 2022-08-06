@@ -9,7 +9,7 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    private String fullName;
+    private String email;
     private String lastName;
     private String firstName;
     public Long getId() {
@@ -30,11 +30,11 @@ public class User {
     public void setPassword(String password) {
       this.password = password;
     }
-    public String getFullName() {
-      return fullName;
+    public String getEmail() {
+      return email;
     }
-    public void setFullName(String fullName) {
-      this.fullName = fullName;
+    public void setEmail(String email) {
+      this.email = email;
     }
     public String getLastName() {
       return lastName;

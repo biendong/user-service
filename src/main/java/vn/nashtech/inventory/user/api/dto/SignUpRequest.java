@@ -8,7 +8,7 @@ import lombok.Setter;
 public class SignUpRequest {
     private String username;
     private String password;
-    private String fullName;
+    private String email;
     private String firstName;
     private String lastName;
     public String getUsername() {
@@ -23,11 +23,11 @@ public class SignUpRequest {
     public void setPassword(String password) {
       this.password = password;
     }
-    public String getFullName() {
-      return fullName;
+    public String getEmail() {
+      return email;
     }
-    public void setFullName(String fullName) {
-      this.fullName = fullName;
+    public void setEmail(String email) {
+      this.email = email;
     }
     public String getFirstName() {
       return firstName;

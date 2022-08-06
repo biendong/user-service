@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
             user.setPassword(BCrypt.hashpw(req.getPassword(), BCrypt.gensalt(10)));
             user.setFirstName(req.getFirstName());
             user.setLastName(req.getLastName());
-            user.setFullName(req.getFullName());
+            user.setEmail(req.getEmail());
             userRepository.save(user);
         }
     }
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
         user.setId(id);
         user.setUsername(req.getUsername());
         user.setPassword(req.getPassword());
-        user.setFullName(req.getFullName());
+        user.setEmail(req.getEmail());
         user.setFirstName(req.getFirstName());
         user.setLastName(req.getLastName());
         return userRepository.save(user);
